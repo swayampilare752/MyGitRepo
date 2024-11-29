@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <style>  body {
+        font-family: Arial, sans-serif;
+        font-size: 14px; /* Adjust font size here */
+      }</style>
+  </head>
+  <body>
+    <form action="submit" method="post" style="width: 1600px; margin: auto; border: 1px solid #000; padding: 20px;">
+      <fieldset>
+        <legend>Personal Details</legend>
+        
+        <!-- First Name -->
+        <label for="firstname">Firstname:</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" /><br /><br />
+
+        <!-- Middle Name -->
+        <label for="middlename">Middlename:</label>
+        <input type="text" id="middlename" name="middlename" placeholder="Enter your middle name" /><br /><br />
+
+        <!-- Last Name -->
+        <label for="lastname">Lastname:</label>
+        <input type="text" id="lastname" name="lastname" placeholder="Enter your last name" /><br /><br />
+
+        <!-- Course -->
+        <label for="course">Course:</label>
+        <select id="course" name="course">
+          <option value="">Course</option>
+          <option value="Bachelors">Bachelors</option>
+          <option value="Masters">Masters</option>
+          <option value="PhD">PhD</option>
+        </select><br /><br />
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label><br /><br />
+
+        <!-- Date of Birth -->
+        <label for="dob">DOB:</label>
+        <input type="date" id="dob" name="dob" /><br /><br />
+
+        <!-- Phone -->
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91" /><br /><br />
+
+        <!-- Address -->
+        <label for="address">Address:</label><br />
+        <textarea id="address" name="address" rows="5" cols="40" placeholder="Enter your address"></textarea><br /><br />
+
+        <!-- Email -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="example@mail.com" /><br /><br />
+
+        <!-- Password -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" /><br /><br />
+
+        <!-- Re-type Password -->
+        <label for="repassword">Re-type password:</label>
+        <input type="password" id="repassword" name="repassword" /><br /><br />
+
+        <!-- Terms and Conditions -->
+        <input type="checkbox" id="terms" name="terms" />
+        <label for="terms">I Agree to terms and conditions</label><br /><br />
+
+        <!-- File Upload -->
+        <label for="file">Choose File:</label>
+        <input type="file" id="file" name="file" /><br /><br />
+
+        <!-- Color Picker -->
+        <label for="color">Choose Color:</label>
+        <input type="color" id="color" name="color" /><br /><br />
+
+        <!-- Reset and Submit Buttons -->
+        <input type="reset" value="Reset" />
+        <input type="submit" value="Submit" />
+      </fieldset>
+    </form>
+  </body>
+</html>
