@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekly test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        .sidebar {
+            width: 25%;
+            height: 100vh;
+            overflow-y: auto;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ccc;
+            padding: 10px;
+        }
+        .sidebar h3 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+        .big-bold-text {
+    font-size: 24px;  /* Makes the font bigger */
+    font-weight: bold; /* Makes the font bold */
+}
+        .project {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .project iframe {
+            width: 100%;
+            height: 250px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            overflow: hidden;
+        }
+        .project span {
+            display: block;
+            font-size: 14px;
+            color: #333;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+        iframe#mainFrame {
+            width: 100%;
+            height: 90vh;
+            border: none;
+            border-radius: 5px;
+        }
+        .project {
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+}
+
+.project:hover {
+    background-color: #f1f1f1;
+}
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h3>Projects</h3>
+        <div class="project" onclick="loadProject('https://swayampilare752.github.io/MyGitRepo/Resume/index.html')">
+            <span class="big-bold-text">Project 1 - Resume</span>
+            <iframe src=" https://swayampilare752.github.io/MyGitRepo/Resume/index.html" title="Project 2"></iframe>
+        </div>
+        <div class="project" onclick="loadProject('https://swayampilare752.github.io/MyGitRepo/CAT/cat.html')">
+            <span class="big-bold-text">Project 2 - Photo Cat App</span>
+            <iframe src=" https://swayampilare752.github.io/MyGitRepo/CAT/cat.html" title="Project 2"></iframe>
+           
+        </div>
+        <div class="project" onclick="loadProject('https://swayampilare752.github.io/MyGitRepo/FORM/form2.html')">
+            <span class="big-bold-text">Project 3 - Form</span>
+            <iframe src="https://swayampilare752.github.io/MyGitRepo/FORM/form2.html" title="Project 3"></iframe>
+          
+        </div>
+        <div class="project" onclick="loadProject('https://swayampilare752.github.io/MyGitRepo/Tribute/Tribute.html')">
+            <span class="big-bold-text">Project 4 - Tribute</span>
+            <iframe src="https://swayampilare752.github.io/MyGitRepo/Tribute/Tribute.html" title="Project 4"></iframe>
+        </div>
+    </div>
+    <div class="content">
+        <iframe id="mainFrame" src="" title="Main Project Viewer" onclick="iframeClicked()"></iframe>
+
+    </div>
+
+    <script>
+        function loadProject(url) {
+            const iframe = document.getElementById('mainFrame');
+            iframe.src = url;
+        }
+    </script>
+</body>
+</html>
+
+
