@@ -1,0 +1,128 @@
+/* Resetting default styles */
+body, h1, h2, p, div, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+    overflow-x: hidden;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+   
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 10px; /* Adds consistent spacing between buttons */
+  }
+  
+  .buttons .signup {
+    margin-left: 10px; /* Slightly shift the signup button to the left */
+  }
+  
+  .buttons button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .login {
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+  }
+  
+  .signup {
+    background-color: red;
+    color: white;
+    margin-right: 35px;
+  }
+  
+  /* Hero section */
+  .hero-section {
+    height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('https://i.pinimg.com/736x/19/8b/2f/198b2f01e73b905772279616eccc7c65.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+  }
+  
+  .content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .content p {
+    font-size: 18px;
+    margin-top: 10px;
+    max-width: 600px;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column; /* Stack navbar elements vertically */
+      align-items: flex-start;
+    }
+  
+    .buttons {
+      margin-top: 10px; /* Add spacing between logo and buttons */
+    }
+  
+    .buttons button {
+      margin: 5px 0; /* Add vertical spacing between buttons */
+      width: 100%; /* Make buttons full-width */
+      
+    }
+  
+    .hero-section {
+      text-align: center;
+      padding: 20px;
+    }
+  
+    .content h1 {
+      font-size: 36px;
+    }
+  
+    .content h2 {
+      font-size: 20px;
+    }
+  
+    .content p {
+      font-size: 16px;
+    }
+  }
+  
+  
