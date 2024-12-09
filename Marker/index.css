@@ -1,0 +1,60 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.marker{
+    display: flex;
+    width: 25%;
+    padding: 1%;
+    height: 40px;
+    
+
+}
+.marker div{
+    padding: 1%;
+    color: transparent;
+    box-shadow: 0px 0px 30px black;
+}
+.d1_red{
+    width: 25%;
+    background-image: linear-gradient(rgba(255, 0, 0,1),rgba(255, 0, 0,0.5),rgba(255, 0, 0,1));
+}
+.d2_red{
+    width: 62.5%;
+    background-image: linear-gradient(rgba(255, 0, 0,0.6),rgba(255, 0, 0,0.2),rgba(255, 0, 0,0.6));
+    
+    border-left: 10px double rgba(0, 0, 0,1) ;
+}
+.d3_red{
+    width: 12.5;
+    background-image: linear-gradient(rgba(255, 0, 0,1),rgba(255, 0, 0,0.5),rgba(255, 0, 0,1));
+}
+.d1_green{
+    width: 25%;
+    background-image: linear-gradient(rgb(60, 206, 2,1),rgb(72, 255, 0,0.5),rgb(72, 255, 0,1));
+}
+.d2_green{
+    width: 62.5%;
+    background-image: linear-gradient(rgb(60, 206, 2,0.6),rgb(72, 255, 0,0.2),rgb(72, 255, 0,0.6)); 
+    border-left: 10px double rgba(0, 0, 0,1) ;
+}
+.d3_green{
+    width: 12.5;
+    background-image: linear-gradient(rgb(60, 206, 2,1),rgb(72, 255, 0,0.5),rgb(72, 255, 0,1));
+}
+.d1_blue{
+    width: 25%;
+    background-image: linear-gradient(rgba(31, 4, 150,1),rgba(31, 4, 150,0.5),rgba(31, 4, 150,1));
+}
+.d2_blue{
+    width: 62.5%;
+    background-image: linear-gradient(rgba(31, 4, 150,0.6),rgba(31, 4, 150,0.2),rgba(31, 4, 150,0.6));
+    
+    border-left: 10px double rgba(0, 0, 0,1) ;
+}
+.d3_blue{
+    width: 12.5;
+    background-image: linear-gradient(rgba(31, 4, 150,1),rgba(31, 4, 150,0.5),rgba(31, 4, 150,1));
+}
