@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Tilt+Neon&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Left Container: Input Section -->
+        <div class="left-Container">
+            <div class="color_and_text animate__animated animate__bounceIn">
+                <textarea id="textarea" cols="50" rows="20" placeholder="// Write a note here"></textarea>
+                <div class="color">
+                    <label for="noteColor">
+                        <img src="color.png" alt="Color Picker">
+                    </label>
+                    <input type="color" id="noteColor" value="#ffff88">
+                </div>
+            </div>
+            <div class="buttonss animate__animated animate__fadeIn">
+                <button id="addNoteBtn" class="bn632-hover bn27">Add Note</button>
+            </div>
+        </div>
+
+        <!-- Right Container: Notes Display Section -->
+        <div class="right-container">
+            <h1>Your Notes</h1>
+            <div id="notesSection" class="right-container-notes"></div>
+            <span id="noNotesMessage" class="notesNotAdded">
+                <p>You have not added a note yet.</p>
+            </span>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+</body>
+
+</html>
+
