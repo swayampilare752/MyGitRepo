@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Search App</title>
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            text-align: center;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        input {
+            padding: 12px;
+            width: 60%;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus {
+            border-color: #007bff;
+        }
+        button {
+            padding: 12px 20px;
+            margin-left: 10px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .search-results {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            padding: 20px;
+        }
+        .search-result {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+        .search-result:hover {
+            transform: scale(1.05);
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        a {
+            display: block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        #show-more-button {
+            display: none;
+            margin-top: 20px;
+            padding: 12px 20px;
+            border: none;
+            background-color: #28a745;
+            color: white;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        #show-more-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Search App</h1>
+    <form>
+        <input type="text" id="search-input" placeholder="Search for images...">
+        <button type="submit">Search</button>
+    </form>
+    <div class="search-results"></div>
+    <button id="show-more-button">Show More</button>
+
+    <script>
+        const accessKey = "RZEIOVfPhS7vMLkFdd2TSKGFBS4o9_FmcV1Nje3FSjw";
+        const formEl = document.querySelector("form");
+        const searchInputEl = document.getElementById("search-input");
+        const searchResultsEl = document.querySelector(".search-results");
+        const showMoreButtonEl = document.getElementById("show-more-button");
+
+        let inputData = "";
+        let page = 1;
+
+        async function searchImages() {
+            inputData = searchInputEl.value;
+            const url = `https://api.unsplash.com/search/photos?page=${page}&query=${inputData}&client_id=${accessKey}`;
+
+            const response = await fetch(url);
+            const data = await response.json();
+            if (page === 1) {
+                searchResultsEl.innerHTML = "";
+            }
+
+            const results = data.results;
+
+            results.map((result) => {
+                const imageWrapper = document.createElement("div");
+                imageWrapper.classList.add("search-result");
+                const image = document.createElement("img");
+                image.src = result.urls.small;
+                image.alt = result.alt_description;
+                const imageLink = document.createElement("a");
+                imageLink.href = result.links.html;
+                imageLink.target = "_blank";
+                imageLink.textContent = result.alt_description;
+
+                imageWrapper.appendChild(image);
+                imageWrapper.appendChild(imageLink);
+                searchResultsEl.appendChild(imageWrapper);
+            });
+
+            page++;
+
+            if (page > 1) {
+                showMoreButtonEl.style.display = "block";
+            }
+        }
+
+        formEl.addEventListener("submit", (event) => {
+            event.preventDefault();
+            page = 1;
+            searchImages();
+        });
+
+        showMoreButtonEl.addEventListener("click", () => {
+            searchImages();
+        });
+    </script>
+</body>
+</html>
+
+</html>
