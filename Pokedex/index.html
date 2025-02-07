@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>POKEDEX</h1>
+    
+    <div class="controls">
+        <select id="typeFilter">
+            <option value="">All Types</option>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="grass">Grass</option>
+            <option value="electric">Electric</option>
+        </select>
+        <button onclick="filterByType()">Filter by Type</button>
+        <button onclick="resetFilter()">Reset</button>
+        <input type="text" id="searchBox" placeholder="Search Pokémon..." onkeyup="searchPokemon()">
+    </div>
+
+    <div id="pokemonContainer" class="pokemon-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

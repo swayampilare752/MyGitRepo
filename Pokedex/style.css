@@ -1,0 +1,130 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Title */
+h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    color: #333;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+select, button, input {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+}
+
+select {
+    background: #ffffff;
+    cursor: pointer;
+}
+
+button {
+    background-color: #12b54b;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #0bc9b3;
+    transform: scale(1.05);
+}
+
+input {
+    width: 200px;
+    border: 1px solid #ccc;
+}
+
+/* Pokémon Container */
+.pokemon-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Pokémon Card */
+.pokemon-card {
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    perspective: 1000px;
+}
+
+/* Type-based Background Colors */
+.grass { background: linear-gradient(135deg, #4CAF50, #66BB6A); }
+.fire { background: linear-gradient(135deg, #FF5722, #FF7043); }
+.electric { background: linear-gradient(135deg, #FFEB3B, #FFD600); }
+.water { background: linear-gradient(135deg, #2196F3, #42A5F5); }
+.bug { background: linear-gradient(135deg, #8CB230, #A8C23F); }
+.normal { background: linear-gradient(135deg, #A8A878, #C6C6A7); }
+.flying { background: linear-gradient(135deg, #81A2EB, #A1C1F5); }
+.fighting { background: linear-gradient(135deg, #C22E28, #E14444); }
+.poison { background: linear-gradient(135deg, #A33EA1, #C26EC2); }
+.rock { background: linear-gradient(135deg, #B6A136, #D3BF5E); }
+.ground { background: linear-gradient(135deg, #E2BF65, #F0D890); }
+.psychic { background: linear-gradient(135deg, #F95587, #FA709A); }
+.ghost { background: linear-gradient(135deg, #735797, #8F7AAF); }
+.ice { background: linear-gradient(135deg, #96D9D6, #A8E0E0); }
+.dragon { background: linear-gradient(135deg, #6F35FC, #925AFF); }
+.dark { background: linear-gradient(135deg, #705746, #8B6C5C); }
+.steel { background: linear-gradient(135deg, #B7B7CE, #D1D1E0); }
+.fairy { background: linear-gradient(135deg, #D685AD, #F0A6C5); }
+.default { background: linear-gradient(135deg, #ffffff, #f1f1f1); }
+
+/* Flip Card Effect */
+.pokemon-card .front, .pokemon-card .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-card .back {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transform: rotateY(180deg);
+}
+
+.pokemon-card.flipped {
+    transform: rotateY(180deg);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .controls {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
