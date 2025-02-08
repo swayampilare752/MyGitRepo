@@ -1,0 +1,127 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    transition: background 0.4s ease-in-out, color 0.4s ease-in-out;
+}
+
+/* Container */
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    transition: background 0.4s ease-in-out;
+}
+
+/* Headings */
+h1, h2 {
+    color: #333;
+    font-weight: 600;
+}
+
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+input, button {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Input Fields */
+input {
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+}
+
+input:focus {
+    background: #ffffff;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Buttons */
+button {
+    background: #28a745;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #218838;
+    transform: scale(1.05);
+}
+
+/* User Card */
+.card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin: 12px 0;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Fade-in Animation */
+.card {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Theme Selector */
+.theme-selector {
+    margin-top: 15px;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode .container {
+    background: #1e1e1e;
+    color: white;
+}
+
+.dark-mode .card {
+    background: #2b2b2b;
+    color: white;
+}
