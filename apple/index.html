@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Phone Store</h1>
+
+        <div class="search-container">
+            <input type="text" id="searchField" placeholder="Search for phones...">
+            <button onclick="searchHandler()">Search</button>
+            <select id="sortOptions">
+                <option value="">Sort By</option>
+                <option value="name">Name</option>
+            </select>
+            <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+        </div>
+
+        <div id="loading" class="hidden">Loading...</div>
+
+        <div id="phone-container" class="phone-grid"></div>
+
+        <button id="showALLBtn" class="hidden" onclick="showBtn()">Show All</button>
+    </div>
+
+    <dialog id="my_modal">
+        <div id="modal-content">
+            <span onclick="closeModal()" class="close">&times;</span>
+            <div id="imgContainer"></div>
+            <h2 id="detailsPhoneName"></h2>
+            <p id="detailsBrand"></p>
+            <p id="detailsSpec"></p>
+            <p id="releaseDate"></p>
+        </div>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+</html>
